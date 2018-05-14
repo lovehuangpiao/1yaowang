@@ -1,0 +1,59 @@
+$defaultColor : white;
+
+@font-face {
+  font-family: 'iconfont';
+  /* project id 664208 */
+  src: url('//at.alicdn.com/t/font_664208_jwaorv7sj2uwstt9.eot');
+  src: url('//at.alicdn.com/t/font_664208_jwaorv7sj2uwstt9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_664208_jwaorv7sj2uwstt9.woff') format('woff'), url('//at.alicdn.com/t/font_664208_jwaorv7sj2uwstt9.ttf') format('truetype'), url('//at.alicdn.com/t/font_664208_jwaorv7sj2uwstt9.svg#iconfont') format('svg');
+}
+
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img{
+    width: 0.6666rem;
+    height: 0.5866rem;
+  }
+  span{
+    color: white;
+    // background: rgba(defaultColor,0);
+  }
+  div{
+    padding: 5px;
+    width: 2.9334rem;
+    height: 0.3733rem;
+    border-radius: 10px;
+    background: $defaultColor;
+    display: flex;
+    // justify-content: center;
+    padding: 5px;
+    align-items: center;
+    i{
+
+    }
+    input{
+      position: relative;
+      top: 1px;
+    }
+  }
+  em{
+    padding-left: 20px;
+    font-size: .1rem;
+    position: relative;
+    color: $defaultColor;
+    &::before{
+      position: absolute;
+      left: 0;
+      top: 3px;
+      font-size: .3rem;
+    }
+  }
+
+}
+

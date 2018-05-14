@@ -1,0 +1,38 @@
+
+img{
+  width: 100%;
+  height: 100%;
+}
+.banner{
+  position: relative;
+  // height: 2rem;
+  // width: 100%;
+  overflow: hidden;
+}
+.discountBanner{
+  background: white;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  .discount_list{
+    // margin: 0 8px;
+    .imgside{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 1.0664rem;
+        height: 1.0666rem;
+      }
+    }
+  }
+  .name{
+    font-size: 12px;
+    padding: 5px 0;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+  }
+  .price{
+    color: #e26363;
+  }
+}
