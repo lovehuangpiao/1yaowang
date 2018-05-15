@@ -5,6 +5,7 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: './src/xiangmu/app.js',//唯一入口文件
+    // entry: './srcs/app.js',//唯一入口文件
     output: {//输出目录
         path: path.resolve(__dirname, './dist'),//打包后的js文件存放的地方(build 后的文件)
         publicPath: '/dist/',//指定资源文件引用的目录(build 在内存中的位置)
