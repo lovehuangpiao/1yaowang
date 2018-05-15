@@ -1,28 +1,9 @@
 import "./common.scss"
 
-import http from "../../../pei-api/utils/httpclient.js"
-
 import React from "react"
 import {Link} from "react-router"
 
 export default class BodyComponent extends React.Component{
-    componentDidMount(){
-        http.get("shouyeSelect").then((res)=>{
-            this.dataset = res.data;
-            console.log(this.dataset)
-        })
-    }
-    post(){
-        console.log(this)
-        fetch('http://localhost:88/class',{
-            method:"POST",
-            body:JSON.stringify(data),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            }
-        });
-    }
     render(){
         return (
             <div className="yibody">
