@@ -16,10 +16,16 @@ export default (state={},action)=>{
         headData:action.headData,
         loading:false
       }
+    case contants.TAILDATA_REQUESTED:
+      return {
+        ...state,
+        tailData : action.tailData,
+        loading : false
+      }
     case contants.HEADDATA_REQUEST_ERROE:
       return {
         ...state,
-        err:data.err,
+        err:action.err,
         loading:false
       };
     default: 

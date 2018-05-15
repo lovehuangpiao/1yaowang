@@ -7,13 +7,19 @@ $default:white;
   li{
     padding: 5px 0;
     width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction : column;
-    img{
-      width: 0.5866rem;
-      height: 0.5866rem;
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction : column;
+      img{
+        width: 0.5866rem;
+        height: 0.5866rem;
+      }
+      span{
+        font-size: 12px;
+        color: #000;
+      }
     }
   } 
 }

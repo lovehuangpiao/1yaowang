@@ -1,16 +1,18 @@
 import React from "react"
 
 import BodyComponent from "../common/common.js"
+import {connect} from 'react-redux'
+import Header from '../header/header'
 
 class ZhaoyaoComponent extends React.Component{
     render(){
         return (
             <div>
-                <h1>找药</h1>
-                <BodyComponent />
+              <Header />  
+              <BodyComponent />
             </div>
         )
     }
 }
 
-export default ZhaoyaoComponent
+export default connect()(ZhaoyaoComponent)

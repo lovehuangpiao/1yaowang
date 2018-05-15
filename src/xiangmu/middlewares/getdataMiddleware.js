@@ -12,15 +12,16 @@ export default (store)=>(dispatch)=>(action)=>{
   if(url){
     if(url && method==='get'){
       HttpClient.get(url,data).then(res=>{
-        // console.log('====================================');
-        // console.log(actions.action_head_requested(res),'data');
-        // console.log('====================================');
-        dispatch(actions.action_head_requested(res))
+        if(res.data.banner){
+          return dispatch(actions.action_head_requested(res))
+        }else{
+          return dispatch(actions.action_tail_requested(res))
+        }
       }).catch(err=>{
-        dispatch(actions.action_head_error(err))
+        return dispatch(actions.action_head_error(err))
       })
     }
   }else{
-    dispatch(action);
+    return dispatch(action);
   }
 }

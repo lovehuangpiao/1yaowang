@@ -1,13 +1,26 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './shoplist.scss'
 import FreeBanner from '../banner/freebanner'
-export default ()=>{
 
-  return (<section className="good_topic">
+import {connect} from 'react-redux'
+
+export default (props)=>{
+
+    if(props.data.length>0){
+    return (<section className="good_topic">
     <h1 className="good_top  iconfont icon-zan">精选专题</h1>
-    <div className="good_list">
-      <a href="#"><img src="https://p3.maiyaole.com/img/mobile/20183/1524211942841101.jpg" /></a>
-      <FreeBanner />
-    </div>
-  </section>)
+    {
+      props.data.map((item)=>{
+        return (<div key={item.id} className="good_list">
+        <a href={item.href}><img src={item.picUrl} /></a>
+        <FreeBanner banner={item.goodProducts} position="good" />
+        </div>);
+      })
+    }
+    
+    </section>)
+    }else{
+      return <div></div>
+    }
 }
+

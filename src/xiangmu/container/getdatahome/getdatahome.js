@@ -5,7 +5,8 @@ import * as actions from '../../action/'
 
 const makeStateToProps = (state)=>{
   return {
-    headData:state
+    headData:state.headData,
+    tailData:state.headData
   }
 }
 
