@@ -3,10 +3,10 @@ import {Router,Route,hashHistory,IndexRoute} from "react-router"
 
 import HomeComponent from "../container/getdatahome/getdatahome"
 import ZhaoyaoComponent from "../components/zhaoyao/zhaoyao.js"
-import CarComponent from "../components/car/car.js"
-import MyComponent from "../components/my/my.js"
-import LoginComponent from "../components/login/login.js"
-import RegComponent from "../components/reg/reg.js"
+import CarComponent from "../component/car/car.js"
+import MyComponent from "../component/my/my.js"
+import LoginComponent from "../component/login/login.js"
+import RegComponent from "../component/reg/reg.js"
 
 import store from '../store'
 import {Provider} from 'react-redux'

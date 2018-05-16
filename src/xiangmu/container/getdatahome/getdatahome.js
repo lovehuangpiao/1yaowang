@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 
-import Home from '../../components/home/home'
+import Home from '../../component/home/home'
 import * as actions from '../../action/'
 
 const makeStateToProps = (state)=>{

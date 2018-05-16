@@ -1,14 +1,14 @@
 import React from "react"
 
 import BodyComponent from "../common/common.js"
-import Header from '../header/header'
+import Header from '../../components/header/header'
 import FilterBanner from '../../container/filterbanner/filterbanner'
-import Nav from '../nav/nav'
-import Notice from '../notice/notice'
+import Nav from '../../components/nav/nav'
+import Notice from '../../components/notice/notice'
 import FilterShoplist from '../../container/filtershoplist/filtershoplist'
 
-import Discount from '../discount/discount'
-import Copyright from '../copyright/copyright'
+import Discount from '../../components/discount/discount'
+import Copyright from '../../components/copyright/copyright'
 import '../../../../node_modules/swiper/dist/css/swiper.css'
 
 class HomeComponent extends React.Component{

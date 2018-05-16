@@ -1,6 +1,6 @@
 import React from "react"
 
-import BodyComponent from "../common/common.js"
+import BodyComponent from "../../component/common/common.js"
 import {connect} from 'react-redux'
 import Header from '../header/header'
 import Zixun from './zixun'
