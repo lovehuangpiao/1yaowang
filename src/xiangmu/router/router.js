@@ -2,7 +2,7 @@ import React from "react"
 import {Router,Route,hashHistory,IndexRoute} from "react-router"
 
 import HomeComponent from "../container/getdatahome/getdatahome"
-import ZhaoyaoComponent from "../components/zhaoyao/zhaoyao.js"
+import ZhaoyaoComponent from "../container/filterzhaoyao/filterzhaoyao"
 import CarComponent from "../component/car/car.js"
 import MyComponent from "../component/my/my.js"
 import LoginComponent from "../component/login/login.js"
