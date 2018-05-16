@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>后台管理页面</title>
+  <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap-reboot.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js" charset="utf-8"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+  <style>
+    .night {
+      background: #333333;
+      color: #E9E9E9;
+    }
+
+    body {
+      padding: 20px;
+      padding-bottom: 50px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    .ul-typearr {
+      overflow-x: hidden;
+
+    }
+
+    .ul-typearr li {
+      float: left;
+      margin-right: 10px;
+      border: 1px solid rgb(215, 0, 49);
+      cursor: pointer;
+    }
+
+    .ul-typearr li a {
+      padding: 5px 10px;
+    }
+
+    .table td,
+    .table th {
+      text-align: center;
+    }
+
+    .ctrl {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background: #f2a6a6;
+      padding: 20px;
+    }
+
+    .addbox {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: rgba(111, 109, 110, 0.71);
+      height: 100%;
+      width: 100%;
+    }
+
+    .addbox div {
+      background: #c47878;
+      height: 500px;
+      width: 400px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      -ms-align-items: center;
+      align-items: center;
+    }
+
+    .addbox div label {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+    }
+
+    .top {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+      opacity: .5;
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+      opacity: 0;
+    }
+
+  .list-enter{opacity: 0; transform: translateX(300px);} 
+  .list-enter-active{transition: all .5s;} 
+  .list-leave-active{transition:
+  all .5s; opacity: 0; transform: translateX(-300px);}
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <top></top>
+    <middle>
+    </middle>
+    <ctrl></ctrl>
+    <addbox :class="" v-if="ishowadd"></addbox>
+  </div>
+  <script type="text/javascript">
+      let todaySpec = [];
+      {
+        let todaySell = [
+          {
+            "Id": 2998,
+            "SubjectName": "捷客每日饼干专场 买就送送饼干",
+            "SujectDesc": "捷客每日饼干专场",
+            "ApplyPlace": "[9]",
+            "PictureUrl": "http://img.muyingzhijia.com/img/201708/20170808105332_10_jk1000.jpg",
+            "SetDiscountTypeId": 1,
+            "SetDiscount": "13.9",
+            "OriDiscount": "￥13.9起",
+            "ReOriDiscount": "",
+            "StartTime": "\/Date(1524213146000-0000)\/",
+            "EndTime": "\/Date(1525509147000-0000)\/",
+            "IsEnable": true,
+            "IsDeleted": false,
+            "CreateBy": 888,
+            "CreateDate": "\/Date(1525186329070-0000)\/",
+            "UpdateBy": 888,
+            "UpdateDate": "\/Date(1525239789717-0000)\/",
+            "Sort": 3127,
+            "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=1789"
+          },
+          {
+            "Id": 3063,
+            "SubjectName": "好奇纸尿裤NB66低至55元",
+            "SujectDesc": "好奇纸尿裤NB66低至55元",
+            "ApplyPlace": "[1][9][10]",
+            "PictureUrl": "http://img.muyingzhijia.com/img/201803/20180315163659_10_1182.jpg",
+            "SetDiscountTypeId": 1,
+            "SetDiscount": "55",
+            "OriDiscount": "￥55起",
+            "ReOriDiscount": "",
+            "StartTime": "\/Date(1523110862000-0000)\/",
+            "EndTime": "\/Date(1525616464000-0000)\/",
+            "IsEnable": true,
+            "IsDeleted": false,
+            "CreateBy": 888,
+            "CreateDate": "\/Date(1525186250740-0000)\/",
+            "UpdateBy": 888,
+            "UpdateDate": "\/Date(1525239789717-0000)\/",
+            "Sort": 3126,
+            "AppClickUrl": "http://m.muyingzhijia.com/Search?k=好奇"
+          }
+        ];
+
+        let boomSell = [
+        {
+          "Id": 2998,
+          "SubjectName": "Lollacup 洛力卡宝宝吸管杯 小鸡杯  红色",
+          "SujectDesc": "如此简单、可爱、实用的小鸡杯，亮丽的颜色和独特的排气孔设计，可以帮助宝宝独立饮水！",
+          "ApplyPlace": "[9]",
+          "PictureUrl": "http://img.muyingzhijia.com/product/web/toutu/151299111.jpg",
+          "SetDiscountTypeId": 1,
+          "SetDiscount": "23.9",
+          "OriDiscount": "￥23.9起",
+          "ReOriDiscount": "",
+          "StartTime": "\/Date(1524213146000-0000)\/",
+          "EndTime": "\/Date(1525509147000-0000)\/",
+          "IsEnable": true,
+          "IsDeleted": false,
+          "CreateBy": 888,
+          "CreateDate": "\/Date(1525186329070-0000)\/",
+          "UpdateBy": 888,
+          "UpdateDate": "\/Date(1525239789717-0000)\/",
+          "Sort": 3127,
+          "AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=1789"
+        },
+        {
+          "Id": 3063,
+          "SubjectName": "玛仑菌舍畅敏活性乳酸菌粉固体饮料1.5g*12袋（婴幼儿型）",
+          "SujectDesc": "玛仑菌舍畅敏活性乳酸菌粉固体饮料1.5g*12袋（婴幼儿型）新老包装交替",
+          "ApplyPlace": "[1][9][10]",
+          "PictureUrl": "http://img.boodoll.cn/img/201607/20160708094352_44_35511.jpg",
+          "SetDiscountTypeId": 1,
+          "SetDiscount": "55",
+          "OriDiscount": "￥55起",
+          "ReOriDiscount": "",
+          "StartTime": "\/Date(1523110862000-0000)\/",
+          "EndTime": "\/Date(1525616464000-0000)\/",
+          "IsEnable": true,
+          "IsDeleted": false,
+          "CreateBy": 888,
+          "CreateDate": "\/Date(1525186250740-0000)\/",
+          "UpdateBy": 888,
+          "UpdateDate": "\/Date(1525239789717-0000)\/",
+          "Sort": 3126,
+          "AppClickUrl": "http://m.muyingzhijia.com/Search?k=好奇"
+        }
+      ];
+       }
+
+    let addbox = Vue.component('addbox', {
+      template: `
+      <div class="addbox">
+     	 	<div>
+          <label>Id<input v-model="Id" type="text" /></label>
+          <label>SubjectName<input v-model="SubjectName" type="text" /></label>
+          <label>SujectDesc<input v-model="SujectDesc" type="text" /></label>
+          <label>PictureUrl	<input v-model="PictureUrl" type="text" /></label>
+          <label>SetDiscount<input v-model="SetDiscount" type="text" /></label>
+          <label>OriDiscount<input v-model="OriDiscount" type="text" /></label>
+          <button @click="adddata">确定</button>
+      	</div>
+      </div>`,
+      methods: {
+        adddata() {
+          if (this.Id) {
+            let formdata = new FormData();
+            let data = {
+              'Id': parseInt(this.Id),
+              'SubjectName': this.SubjectName,
+              'SujectDescv': this.SujectDescv,
+              'PictureUrl': this.PictureUrl,
+              'SetDiscount': this.SetDiscount,
+              'OriDiscount': this.OriDiscount
+            };
+            formdata.append('Id', this.Id);
+            formdata.append('SubjectName', this.SubjectName);
+            formdata.append('SujectDescv', this.SujectDescv);
+            formdata.append('PictureUrl', this.PictureUrl);
+            formdata.append('SetDiscount', this.SetDiscount);
+            formdata.append('OriDiscount', this.OriDiscount);
+            fetch('http://localhost:88/insertdata', {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              }
+            });
+            this.$parent.ishowadd = false;
+          } else {
+            alert('Id不能为空');
+          }
+        }
+      },
+      data() {
+        return {
+          Id: '',
+          SubjectName: '',
+          SujectDesc: '',
+          PictureUrl: '',
+          SetDiscount: '',
+          OriDiscount: '',
+        }
+      }
+    });
+
+    let tablecomponent = {
+      template: `<table class="table">
+                <tbody>
+                  <tr>
+                    <th>Id</th>
+                    <th>SubjectName</th>
+                    <th>SujectDesc</th>
+                    <th>PictureUrl</th>
+                    <th>SetDiscount</th>
+                    <th>OriDiscount</th>
+                    <th>Ctrl</th>
+                    </tr>
+                </tbody>
+                <tbody name="list" is = "transition-group">
+                    <tr v-for="(item,index) in dataarr" v-bind:key="item.Id" :data-idx="index" >
+                      <td>{{item.Id}}</td>
+                      <td>{{item.SubjectName}}</td>
+                      <td>{{item.SujectDesc}}</td>
+                      <td>{{item.PictureUrl}}</td>
+                      <td>{{item.SetDiscount}}</td>
+                      <td>{{item.OriDiscount}}</td>
+                      <td ><button :idx="index" @click="deletedata($event)">删除</button></td>
+                    </tr>
+                </tbody>
+              </table>`,
+      data: () => ({
+        dataarr: todaySpec,
+        // show: true
+      }),
+      mounted() {
+        fetch('http://localhost:88/todayspecial').then(res => {
+          return res.json();
+        }).then(res => {
+          console.log(res);
+          todaySpec = res.data.data;
+          this.dataarr = res.data.data ;
+        })
+      },
+      methods: {
+        insert() {},
+        deletedata(event) {
+          let idx = event.target.getAttribute("idx");
+          console.log(this.dataarr[idx]);
+          fetch('http://localhost:88/deletedata/' + this.dataarr[idx].Id).then((res) => {
+            return res.json();
+          }, err => {
+            console.log(err);
+          }).then(res => {
+            console.log(res);
+            if (res.status) {
+              this.dataarr.splice(idx, 1);
+              // this.show = !this.show;
+            } else {
+              alert('删除失败,请检查网络问题');
+            }
+          })
+        },
+        updata() {}
+      }
+    };
+
+    let typearr = [{
+        name: "今日专场"
+      },
+      // {
+      //   name: "今日特卖"
+      // },
+      // {
+      //   name: "精选爆款"
+      // }
+    ];
+
+    Vue.use(VueRouter);
+
+    let routes = [];
+
+    routes.push({
+      path: '/tabledata',
+      component: tablecomponent
+    });
+
+    let router = new VueRouter({
+      routes
+    });
+
+    let app = new Vue({
+      el: "#app",
+      data: {
+        ishowadd: false
+      },
+      router,
+      components: {
+        top: {
+          template: `
+          <div class="top" :class="[{night:isNight}]">
+            <h1>母婴之家后台管理系统v1.0</h1>
+            <select v-model="itemname" @change="changestatus" name="choosemode">
+              <option  value="night">night</option>
+              <option value="sun" selected >sun</option>
+            </select>
+          </div>`,
+          data() {
+            return {
+              itemname: "sun",
+              isNight: false,
+              top: 'top'
+            }
+          },
+          methods: {
+            changestatus() {
+              //        		console.log('你点击了');
+              switch (this.itemname) {
+                case 'night':
+                  this.isNight = this.itemname == 'night' ? true : false
+                  console.log(this.itemname);
+                  break;
+                case 'sun':
+                  this.isNight = this.itemname == 'sun' ? false : true
+                  console.log(this.itemname);
+                  break;
+                default:
+                  break;
+              }
+            }
+          }
+        },
+        middle: {
+          template: `
+          <div><ul class="ul-typearr">
+              <li v-for="item in typearr" :key="item.name" :name="item.name" @click="changedata($event)">
+                {{item.name}}
+              </li>
+            </ul>
+            <router-view></router-view>
+          </div>`,
+          data: function () {
+            return {
+              typearr
+            }
+          },
+          methods: {
+            changedata(event) {
+              let name = event.target.getAttribute('name');
+              // console.log(name);
+              switch (name) {
+                case '今日专场':
+                  console.log(this);
+                  this.$children[0].dataarr = todaySpec;
+                  break;
+                case '今日特卖':
+                  console.log(this);
+                  this.$children[0].dataarr = todaySell;
+                  break;
+                case '精选爆款':
+                  this.$children[0].dataarr = boomSell;
+                  break;
+                default:
+                  break;
+              }
+              this.$router.push('tabledata');
+            }
+          }
+        },
+        ctrl: {
+          template: `<div class="ctrl">
+            <button @click="adddata">增加</button>
+          </div>`,
+          data() {
+            return {};
+          },
+          methods: {
+            adddata() {
+              this.$parent.ishowadd = true;
+
+            }
+          }
+        }
+      },
+      mounted: function () {
+        this.$router.push('tabledata');
+      }
+    });
+
+  </script>
+</body>
+
+</html>

@@ -7,20 +7,17 @@
         flex:1;
         text-align:center;
         position:relative;
+        color:black;
+        z-index:999;
         i{
             font-size:0.266667rem;
-            color:black;
             position:absolute;
             left:0.506667rem;top:0.106667rem;
         }
         span{
             font-size:0.16rem;
-            color:black;
             position:absolute;
             left:0.466667rem;top:0.4rem;
         }
-    }
-    .red{
-        color:red;
     }
 }
