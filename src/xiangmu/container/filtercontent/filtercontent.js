@@ -3484,7 +3484,6 @@ let data = [
 const makeDispatchToProps = (dispatch) => {
   return {
     getsubdata: (Id) => {
-      
       dispatch(actions.action_subcatetory(data.filter((item) => item.fatherId === Id)[0]))
     },
     imigetonedata : ()=>{

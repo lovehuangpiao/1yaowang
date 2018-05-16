@@ -9,17 +9,30 @@ import FilterBanner from '../../container/filterbanner/filterbanner'
 import Classlist from '../../components/classlist/classlist'
 export default class Content extends Component{
 
+  // static state = {
+  //   isactive : false
+  // }
 
+  changeactive (id) {
+    for (let item in this.refs){
+      if(item == id){
+        this.refs[item].classList.add('active')
+      }else{
+        this.refs[item].classList.remove('active')
+      }
+    };
+  }
   render(){
     return (<section className="content">
       <div className="left">
         <ul className="classlist">
           {
             this.props.data.map((item)=>{
-              return (<li onClick={(e) => {
+              return (<li  onClick={(e) => {
                 e.preventDefault();
+                this.changeactive(item.id)
                 this.props.getsubdata(item.id)
-              }} key={item.id} ><a href="javascript ;">
+              }} key={item.id} ><a  ref={item.id}  href="javascript ;">
               {item.name}</a>
               </li>)
             })
@@ -39,5 +52,8 @@ export default class Content extends Component{
 
   componentDidMount(){
     this.props.imigetonedata();
+  }
+  componentDidUpdate(){
+    this.changeactive(1001447)
   }
 }

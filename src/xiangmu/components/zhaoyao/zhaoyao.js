@@ -15,6 +15,9 @@ class ZhaoyaoComponent extends React.Component{
 
   
 
+    componentDidMount(){
+      $('.zhaoyao').addClass('red').siblings('a').removeClass('red');
+    }
     render(){
         return (
             <div className="zhaoyao" style={{fontSize:14 + "px",height:100+"%"}}>

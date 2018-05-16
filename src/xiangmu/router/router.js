@@ -7,6 +7,8 @@ import CarComponent from "../component/car/car.js"
 import MyComponent from "../component/my/my.js"
 import LoginComponent from "../component/login/login.js"
 import RegComponent from "../component/reg/reg.js"
+import ListComponent from "../component/list/list.js"
+import DetailsComponent from "../component/details/details.js"
 
 import store from '../store'
 import {Provider} from 'react-redux'
@@ -24,6 +26,8 @@ export default class RouterComponent extends React.Component{
                 <Route path="/my" component={MyComponent} />
                 <Route path="/login" component={LoginComponent} />
                 <Route path="/reg" component={RegComponent} />
+                <Route path="/list" component={ListComponent} />
+                <Route path="/details" component={DetailsComponent} />
             </Router>
             </Provider>
         )

@@ -3,6 +3,9 @@ import React from "react"
 import BodyComponent from "../common/common.js"
 
 class MyComponent extends React.Component{
+    componentDidMount(){
+        $('.my').addClass('red').siblings('a').removeClass('red');
+    }
     render(){
         return (
             <div>
