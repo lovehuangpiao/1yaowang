@@ -1,0 +1,22 @@
+.good_topic{
+  background: white;
+  margin-top: 0.1563rem;
+  padding: 0 0.1563rem;
+  .good_top{
+    padding: 0px 0.1563rem 0.0781rem 0rem;
+    height: 0.6016rem;
+    line-height: 0.6016rem;
+    &::before{
+      color:pink;
+      padding: 0 5px;
+      width: 20px;
+    }
+    
+  }
+  .good_list{
+
+    a>img{
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.content{
+  // height: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  .left{
+    width: 25%;
+    background: rgb(245, 245, 245);
+    .classlist{
+      overflow-x: hidden;
+      height: 100%;
+      border-right: 1px solid rgba(0,0,0,.1);
+      li{
+        border-bottom: 1px solid rgb(199, 199, 199);
+        a {
+          padding: 0 8px;
+          display: block;
+          text-align: center;
+          height: 42px;
+          line-height: 42px;
+          font-size: 12px;
+        }
+        a.active{
+          color: #f66;
+          background: #fff;
+          border-left: 2px solid #f66;
+        }
+      }
+    }
+  }
+  .right{
+    width: 75%;
+    padding: 8px;
+  }
+}

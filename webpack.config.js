@@ -4,6 +4,8 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 //css样式从js文件中分离出来,需要通过命令行安装 extract-text-webpack-plugin依赖包
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
+    entry: './src/xiangmu/app.js',//唯一入口文件
+    // entry: './srcs/app.js',//唯一入口文件
     entry: './src/xiangmu/project/app.js',//唯一入口文件
     output: {//输出目录
         path: path.resolve(__dirname, './dist'),//打包后的js文件存放的地方(build 后的文件)

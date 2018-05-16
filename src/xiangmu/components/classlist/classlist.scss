@@ -1,0 +1,33 @@
+.list_size{
+
+  h5 {
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(184, 184, 184);
+  }
+  .list_items{
+    display: flex;
+    flex-wrap: wrap;
+    // padding: 10px 10px;
+    // justify-content: center;
+    justify-content: center;
+    align-content: center;
+    li{
+      margin: 10px;
+      border-radius: 50%;
+      a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img{
+          width: 0.7813rem;
+          height: 0.7813rem;
+        }
+        span{
+          margin-top: 8px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

@@ -11,6 +11,9 @@ img { border:0; vertical-align:middle; }
 /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
 table { border-collapse:collapse; }
 a{ text-decoration:none; }
+html,body{
+  height: 100%;
+}
 *{ box-sizing:border-box; }
 /*添加公共样式*/
 /*body {
@@ -27,7 +30,9 @@ h1,h2,h3,h4,h5,h6 { text-decoration:none; font-weight:normal; font-size:1em; }
 /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
 s,i,em{ font-style:normal; text-decoration:none; }
 
-
+a{
+  color:#333;
+}
 /*公共类*/
 .container {  /*版心 提取 */
     width: 1190px;

@@ -1,0 +1,25 @@
+
+.discount{
+  background: white;
+  margin-bottom: 0.125rem;
+  .discountBanner{
+    overflow-y:hidden;
+    position: relative;
+    ul{
+      padding: 5px;
+      li{
+        width: 1.3438rem;
+        height: 2.1406rem;
+        padding: 5px;
+        div{
+          display: flex;
+          justify-content: center;
+          img{
+            width: 1.0625rem;
+          }
+        }
+        
+      }
+    }
+  }
+}
