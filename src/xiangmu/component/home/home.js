@@ -42,6 +42,7 @@ class HomeComponent extends React.Component{
     componentDidMount(){
       this.props.getData(this.props.headconfig)
       this.props.getData(this.props.tailconfig)
+      $('.home').addClass('red').siblings('a').removeClass('red');
     }
     
 }
