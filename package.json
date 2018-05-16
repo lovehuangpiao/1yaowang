@@ -44,14 +44,11 @@
     "element-react": "^1.1.4",
     "element-theme-default": "^1.4.2",
     "events": "^1.1.1",
-<<<<<<< HEAD
     "flux": "^3.1.2",
-=======
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
     "mongodb": "^3.0.7",
     "request": "^2.85.0",
->>>>>>> 5106dc026809702d15817f6bd4b311fa2cc80b64
     "swiper": "^4.2.6"
   }
 }
