@@ -57,6 +57,21 @@ class Reg extends React.Component{
                     </div>
                     <div className="btn">登录</div>
                 </div>
+                <div className="new">
+                    新用户可通过快速登录注册账号
+                </div>
+                <div className="qita">
+                    <i className="i1"></i>
+                    <span>用其他方式登录</span>
+                    <i className="i2"></i>
+                </div>
+                <div className="wang">
+                    <div className="item"><i className="fa fa-qq" aria-hidden="true"></i></div>
+                    <div className="item item3"><i className="fa fa-weixin" aria-hidden="true"></i></div>
+                    <div className="item item2"><i className="fa fa-weibo" aria-hidden="true"></i></div>
+                    <div className="item"><i className="fa fa-twitter-square" aria-hidden="true"></i></div>
+                    <div className="item item1"><i className="fa fa-github" aria-hidden="true"></i></div>
+                </div>
             </div>
         )
     }
