@@ -37,6 +37,7 @@ export default class Banner extends Component{
           </div>
         </div>)
       }
+      return null;
     }
   
     mSwiper = null;
