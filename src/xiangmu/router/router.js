@@ -15,7 +15,9 @@ export default class RouterComponent extends React.Component{
             <Provider store={store}>
             <Router history={hashHistory}>
                 <Route path="/" component={HomeComponent} /> 
-                <Route path="/zhaoyao" component={ZhaoyaoComponent} />
+                <Route path="/zhaoyao" component={ZhaoyaoComponent} >
+                  <Route path="list/:data"></Route>
+                </Route>
                 <Route path="/car" component={CarComponent} />
                 <Route path="/my" component={MyComponent} />
             </Router>
