@@ -1,20 +1,34 @@
-import React from 'react'
+import React,{Component} from 'react'
 import './classlist.scss'
+import { connect } from 'react-redux';
 
-export default ()=>{
 
-  return (<div className="list_size">
-    <h5>热门类目</h5>
-    <ul className="list_items">
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-      <li><a href="http://"><img src="https://p4.maiyaole.com/img/category/201708/1502183291108.png?81556" /><span>哈哈哈哈</span></a></li>
-    </ul>
-  </div>)
+class ClassList extends Component{
+  
+  render(){
+    return (<div className="list_size">
+      <h5>{this.props.data.name}</h5>
+      <ul className="list_items">
+        {
+          this.props.data.thridCategory.map((item)=>{
+            return (<li key={item.id}><a href="http://"><img src={item.icon} /><span>{item.name}</span></a></li>)
+          })
+        }
+      </ul>
+    </div>)
+    
+  };
+  
 }
+const makeStateToProps=(state)=>{
+  let data = {thridCategory:[]};
+  try {
+    data = state.catetoryData.subcatetorydata || { thridCategory: [] }
+  } catch (error) {
+    data = { thridCategory: [] }
+  }
+  return {
+    data : data
+  }
+}
+export default connect(makeStateToProps)(ClassList); 
