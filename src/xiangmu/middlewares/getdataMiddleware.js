@@ -10,10 +10,12 @@ export default (store)=>(dispatch)=>(action)=>{
   // console.log('====================================');
   let {url,method,data} = action;
   if(url){
+    dispatch(action);
     if(url && method==='get'){
       HttpClient.get(url,data).then(res=>{
         if(res.data.banner){
           return dispatch(actions.action_head_requested(res))
+
         }else{
           return dispatch(actions.action_tail_requested(res))
         }

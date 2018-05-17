@@ -8,7 +8,7 @@ export default (state={},action)=>{
     case contants.HEADDATA_REQUESTING:
       return {
         ...state,
-        loading:ture
+        loading:true
       };
     case contants.HEADDATA_REQUESTED:
       return {
