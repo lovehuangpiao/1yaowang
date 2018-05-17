@@ -48,7 +48,7 @@ module.exports = {
         // 注册
         app.post('/reg',async (req,res)=>{
             // 获取用户数据
-            let username = req.body.username;
+            let username = req.body.phone;
             let password = req.body.password;
 
             // 用户地址：null

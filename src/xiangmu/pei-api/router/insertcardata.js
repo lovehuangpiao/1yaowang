@@ -5,7 +5,7 @@ const db = require('../utils/pei_db');
 module.exports = {
   reg(app){
     app.post('/insertcardata',async function(req,res){
-      
+      console.log(req.body)
       let backdata = [];
       if (Object.keys(req.body).length > 0) {
         let data = await db.select('cardata',{Id:parseInt(req.body.Id)});

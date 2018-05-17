@@ -57,7 +57,7 @@ export default {
 
 
 import axios from 'axios';
-import router from '../../project/router/router.js';
+import router from '../../router/router.js';
 
 const baseUrl = 'http://10.3.133.33:88/'
 
