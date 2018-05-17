@@ -9,6 +9,9 @@ import FilterShoplist from '../../container/filtershoplist/filtershoplist'
 
 import Discount from '../../components/discount/discount'
 import Copyright from '../../components/copyright/copyright'
+
+import Loading from '../../components/loading/loading'
+
 import '../../../../node_modules/swiper/dist/css/swiper.css'
 
 class HomeComponent extends React.Component{
@@ -24,7 +27,14 @@ class HomeComponent extends React.Component{
     }
     
     render(){
-      // console.log(this.props,'home')
+      console.log(this.props)
+      try {
+        if (this.props.headData.loading){
+          return <Loading />
+        }
+      } catch (err) {
+        
+      }
       return (
         <div className="icon-font" style={{fontSize: 14 + 'px',background:'#e0e0e0',paddingBottom:50+"px"}}>
           <Header />
@@ -39,9 +49,10 @@ class HomeComponent extends React.Component{
         </div>
         )
     }
-    componentDidMount(){
+    componentWillMount(){
       this.props.getData(this.props.headconfig)
       this.props.getData(this.props.tailconfig)
+
       $('.home').addClass('red').siblings('a').removeClass('red');
     }
     
