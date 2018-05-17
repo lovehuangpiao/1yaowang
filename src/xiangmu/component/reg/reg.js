@@ -17,34 +17,27 @@ class Reg extends React.Component{
         });
     }
     huan(){
-        $("#container").children().siblings().remove();
         console.log($("#verifyCanvas")[0])
         var verifyCode = new GVerify({
             id:"container",
             type:"blend"
         });
+        $("#container #verifyCanvas:last-child").prev().remove();
         verifyCode.refresh();
-
     }
     btn(){
-        var verifyCode = new GVerify({
-            id:"container",
-            type:"blend"
-        });
-        $("#container");
         let phone = this.refs.phone.value;
         let yan = this.refs.yan.value;
         let password = this.refs.password.value;
-        console.log(password)
-        console.log(yan)
+        console.log(phone)
         if(!/^1[3-8]\d{9}$/i.test(phone)){
             alert("手机号不合法");
             return false;
         }
-        if(verifyCode.validate(yan) === false){
-            alert("验证码不正确");
-            return false;
-        }
+        // if(verifyCode.validate(yan) === false){
+        //     alert("验证码不正确");
+        //     return false;
+        // }
         if(password == ""){
             alert("密码不能为空")
             return false;

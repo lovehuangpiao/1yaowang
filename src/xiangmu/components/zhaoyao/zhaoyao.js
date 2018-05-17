@@ -12,12 +12,6 @@ import Zixun from './zixun'
 import FilterContent from '../../container/filtercontent/filtercontent'
 import './zhaoyao.scss'
 class ZhaoyaoComponent extends React.Component{
-
-  
-
-    componentDidMount(){
-      $('.zhaoyao').addClass('red').siblings('a').removeClass('red');
-    }
     render(){
         return (
             <div className="zhaoyao" style={{fontSize:14 + "px",height:100+"%"}}>
@@ -30,6 +24,7 @@ class ZhaoyaoComponent extends React.Component{
     }
 
     componentDidMount(){
+      $('.zhaoyao').addClass('red').siblings('a').removeClass('red');
       try {
         this.props.getData();
       } catch (error) {
