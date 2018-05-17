@@ -28,6 +28,7 @@ export default class RouterComponent extends React.Component{
                 <Route path="/reg" component={RegComponent} />
                 <Route path="/list" component={ListComponent} />
                 <Route path="/details" component={DetailsComponent} />
+                <Route path="/details(/:id)" component={DetailsComponent} />
             </Router>
             </Provider>
         )

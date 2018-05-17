@@ -57,7 +57,7 @@ export default {
 
 
 import axios from 'axios';
-import router from '../../project/router/router.js';
+import router from '../../router/router.js';
 
 const baseUrl = 'http://10.3.133.33:88/'
 
@@ -87,9 +87,9 @@ export default {
             }).then((res) => {
                 if(!res.data.status && res.data.message == 'unauth'){
                     router.push({name: 'login'});
-                    console.log(res.data);
+                    // console.log(res.data);
                 } else {
-                    console.log(res.data);
+                    // console.log(res.data);
                     /*router.push({name: 'my'});*/
                     resolve(res.data);
                 }
