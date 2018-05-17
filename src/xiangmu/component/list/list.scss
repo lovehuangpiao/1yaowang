@@ -1,6 +1,8 @@
 #list{
     height:100%;
     font-size:0.186667rem;
+    display:flex;
+    flex-direction:column;
     .header{
         display:flex;
         flex-direction:column;
@@ -69,6 +71,8 @@
         }
     }
     .main{
+        flex:1;
+        overflow-x:hidden;
         li{
             height:1.866667rem;
             border-bottom:0.013333rem solid #E7E7E7;
@@ -107,6 +111,7 @@
                 }
             }
             .main-right-bottom{
+                margin-top:0.2rem;
                 >span{
                     color:#FF6666;
                 }

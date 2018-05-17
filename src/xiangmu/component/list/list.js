@@ -1,12 +1,21 @@
 import "./list.scss";
 
 import React from "react";
-
+import {Link} from "react-router";
+import http from "../../pei-api/utils/httpclient.js"
 
 export default class ListComponent extends React.Component{
-/*    componentWillMount(){
-        
-    }*/
+    state = {
+        goods : []
+    }
+    componentDidMount(){
+        http.post("list").then((res) =>{
+            console.log(res.status.data);
+            this.setState({
+                goods: res.status.data
+            })
+        })
+    }
     render(){
         return (
             <div id="list">
@@ -62,21 +71,25 @@ export default class ListComponent extends React.Component{
                     </li>
                 </ul>
                 <ul className="main">
-                    <li>
-                        <img src="https://p4.maiyaole.com/img/item/201804/25/200_20180425163449933.jpg"  className="list-img" />
-                        <div className="main-right-top">
-                            <p className="goods-name">
-                                <span className="ziying">自营</span>
-                                <span>三九/999 感冒灵颗粒 10g*9袋</span>
-                            </p>
-                            <p className="cheng">中成药</p><br/>
-                            <p className="taocan">套餐</p>
-                        </div>
-                        <div className="main-right-bottom">
-                            <span>￥10.2</span>
-                            <p>14161条评论 好评率99.30%<i className="fa fa-shopping-cart cart" aria-hidden="true"></i></p>
-                        </div>
-                    </li>
+                    {
+                        this.state.goods.map(function(item){
+                            return <li key={item.id}>
+                                <Link to={`/details/${item.id}`}><img src={item.img}  className="list-img" /></Link>
+                                <div className="main-right-top">
+                                    <p className="goods-name">
+                                        <span className="ziying">自营</span>
+                                        <span>{item.name}</span>
+                                    </p>
+                                    <p className="cheng">中成药</p><br/>
+                                    <p className="taocan">套餐</p>
+                                </div>
+                                <div className="main-right-bottom">
+                                    <span>￥{item.price}</span>
+                                    <p>14161条评论 好评率99.30%<i className="fa fa-shopping-cart cart" aria-hidden="true"></i></p>
+                                </div>
+                            </li>
+                        })
+                    }
                 </ul>
             </div>
         )
