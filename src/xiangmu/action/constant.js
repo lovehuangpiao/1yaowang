@@ -12,4 +12,6 @@ export const TAILDATA_REQUEST_ERROE = 5;
 
 
 
+export const CATEGORY_LIST = 6;
 
+export const SUBCATEGORY_LIST = 7;
