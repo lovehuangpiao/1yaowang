@@ -30,19 +30,21 @@ module.exports = {
             console.log(req.body);
             let username = req.body.username;
             let password = req.body.password;
-            console.log(username,password);
+            console.log(username,password,typeof req.body.check);
             
             let result = await db.select('user',{username,password});
             
             if(result.status){
-                console.log(result);
-                let token = jwt.sign({username},'123456',{expiresIn:60*5});
+                let token = jwt.sign({username},'123456',{expiresIn:0});
                 let ar = apiResult(result.status,token,result.data);
                 res.send(ar);
+                if(req.body.check == "true"){
+                    console.log(666)
+                    let token = jwt.sign({username},'123456',{expiresIn:60*60*24*7});
+                }
             }else{
                 res.send(result);
             }
-            
         });
 
         // 注册

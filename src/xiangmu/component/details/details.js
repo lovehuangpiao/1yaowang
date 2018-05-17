@@ -14,8 +14,9 @@ export default class DetailsComponent extends React.Component{
         console.log(id)
         let goods;
         http.post("list",{list_id:id}).then((res) =>{
-            console.log(res.status.data);
-            goods = res.status.data[0]
+            goods = res.status.data[0];
+            
+            console.log(typeof(goods._id));
             this.setState({
                 details:res.status.data
             })
@@ -51,6 +52,7 @@ export default class DetailsComponent extends React.Component{
                     'Content-Type': 'application/json',
                 }
             });
+            console.log(goods)
         })
 
 
@@ -74,7 +76,6 @@ export default class DetailsComponent extends React.Component{
                 <main>
                     {
                         this.state.details.map(function(item){
-                            console.log(item)
                             return(
                                 <div key={item.id}>
                                     <div className="swiper-container">

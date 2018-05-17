@@ -10,7 +10,7 @@ export default class ListComponent extends React.Component{
     }
     componentDidMount(){
         http.post("list").then((res) =>{
-            console.log(res.status.data);
+            console.log(typeof(res.status.data[0]._id));
             this.setState({
                 goods: res.status.data
             })

@@ -8,6 +8,7 @@ html,body{height: 100%;}
         line-height: 0.6rem;
         position:relative;
         margin-bottom:0.266667rem;
+        background:#f9f9f9;
         .left{
             position:absolute;
             left:0.2rem;top:0.093333rem;
@@ -82,12 +83,11 @@ html,body{height: 100%;}
         }
         .btn{
             height:0.6rem;
-            background:#EEEEEE;
+            background:red;
             font-size:0.186667rem;
             line-height: 0.6rem;
             text-align:center;
             border-radius:0.066667rem;
-            color:#bcbcbc;
         }
     }
     .new{

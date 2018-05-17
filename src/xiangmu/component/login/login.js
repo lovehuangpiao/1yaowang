@@ -1,4 +1,5 @@
 import "./login.scss"
+import http from "../../pei-api/utils/httpclient.js"
 
 import React from "react"
 import {Link} from "react-router"
@@ -11,25 +12,39 @@ class Login extends React.Component{
     state = {
         random:2222
     }
-    componentDidMount(){
-        var num = "";  
-        for(var i=0;i<4;i++){  
-            num += Math.floor(Math.random()*10)  
-        }  
-        console.log(num);
-        this.setState({
-            random:num
-        }) 
+    componentDidMount(){ 
+        var verifyCode = new GVerify({
+            id:"container",
+            type:"blend"
+        });
     }
     huan(){
-         var num = "";  
-        for(var i=0;i<4;i++){  
-            num += Math.floor(Math.random()*10)  
-        }  
-        console.log(num);
-        this.setState({
-            random:num
-        }) 
+        console.log($("#verifyCanvas")[0])
+        var verifyCode = new GVerify({
+            id:"container",
+            type:"blend"
+        });
+        $("#container #verifyCanvas:last-child").prev().remove();
+        verifyCode.refresh();
+    }
+    btn(){
+        let username = this.refs.phone.value;
+        let password = this.refs.password.value;
+        let check = this.refs.check.checked;
+        let tu = this.refs.tu.value;
+        http.post("login",{username,password,check}).then((res)=>{
+            console.log(res)
+            if(res.status){
+                window.localStorage.setItem('username',res.message[0].username);
+                this.props.router.push({pathname: '/my'});
+                if(check){
+                    console.log(666)
+                    window.localStorage.setItem('token',res.data);
+                }
+            }else{
+                alert("账号或密码错误");
+            }  
+        })
     }
     render(){
         return (
@@ -44,23 +59,23 @@ class Login extends React.Component{
                 <div className="denglu">
                     <div>
                         <div  className="log">
-                            <input type="text" placeholder="手机号/邮箱/用户名"/>
+                            <input type="text" placeholder="手机号/邮箱/用户名" ref="phone"/>
                         </div>
                         <div  className="log">
-                            <input type="text" placeholder="登录密码"/>
+                            <input type="password" placeholder="登录密码" ref="password"/>
                         </div>
                         <div  className="log">
-                            <input type="text" placeholder="图片验证码" />
-                            <i className="tu">{this.state.random}</i>
+                            <input type="text" placeholder="图片验证码" ref="tu"/>
+                            <i className="tu" id="container"></i>
                             <span className="huan" onClick={this.huan.bind(this)}>换一张</span>
                         </div>
                     </div>
                     <div className="box">
-                        <div className="box1"></div>
+                        <input type="checkbox" className="box1" ref="check"/>
                         <span className="sp1">7天免登陆</span>
                         <span className="sp2">忘记密码？</span>
                     </div>
-                    <div className="btn">登录</div>
+                    <div className="btn" onClick={this.btn.bind(this)}>登录</div>
                 </div>
                 <div className="new">
                     新用户可通过快速登录注册账号
