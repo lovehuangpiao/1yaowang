@@ -1,0 +1,162 @@
+html,body{height: 100%;}
+.my{
+    height: 100%;
+    .myhead{
+        height: 1.8rem;
+        background:#FF6D55;
+        padding-top:0.133333rem;
+        padding-left:0.24rem;
+        .dizhi{
+            position:relative;
+            height: 0.213333rem;
+            i{
+                font-size:0.213333rem;
+                color:#fff;
+                position:absolute;
+                left:0;top:0;
+            }
+            span{
+                font-size:0.186667rem;
+                color:#fff;
+                position:absolute;
+                left:0.2rem;top:-0.04rem;
+            }
+        }
+        .tou{
+            position:relative;
+            margin-top:0.186667rem;
+            i{
+                font-size:1.066667rem;
+                color:#fff;
+                position:absolute;
+            }
+            span{
+                font-size:0.186667rem;
+                color:#fff;
+            }
+            .sp1{
+                position:absolute;
+                left:1.2rem;top:0.506667rem;
+            }
+            .sp2{
+                position:absolute;
+                left:1.8rem;top:0.506667rem;
+            }
+        }
+        .hui{
+            width: 1.6rem;
+            height: 0.48rem;
+            background:#EA4739;
+            position:absolute;
+            right:0;top:0.24rem;
+            border-radius:0.4rem 0 0 0.4rem;
+            i{
+                display:block-inline;
+                font-size:0.266667rem;
+                color:#fff;
+                position:absolute;
+                left:0.16rem;top:0.106667rem;
+            }
+            span{
+                font-size:0.16rem;
+                color:#fff;
+                position:absolute;
+                left:0.533333rem;top:0.026667rem;
+            }
+        }
+    }
+    .money{
+        height: 0.56rem;
+        background:#EC4A46;
+        li{
+            float:left;
+            width: 50%;
+            font-size:0.16rem;
+            color:#fff;
+            text-align:center;
+            margin-top:0.106667rem;
+            i{
+                font-size:0.24rem;
+            }
+        }
+        .li1{
+            border-right:1px solid #F2807D;
+        }
+    }
+    .dan{
+        background:#F0F0F0;
+        padding-top:0.133333rem;
+        .quan{
+            background:#fff;
+            ul{
+                height: 1.04rem;
+                border-bottom:1px solid #E5E5E5;
+                padding-top:0.226667rem;
+                li{
+                    width: 25%;
+                    height: 100%;
+                    float:left;
+                    position:relative;
+                    i{
+                        font-size:0.32rem;
+                        position:absolute;
+                        left:0.453333rem;top:0;
+                    }
+                    span{
+                        font-size:0.16rem;
+                        position:absolute;
+                        left:0.373333rem;top:0.373333rem;
+                    }
+                }
+            }
+            .ding{
+                height: 0.64rem;
+                position:relative;
+                span{
+                    font-size:0.186667rem;
+                    position:absolute;
+                    line-height: 0.64rem;
+                    margin-left:0.2rem;
+                }
+                i{
+                    position:absolute;
+                    right:20px;top:10px;
+                    color:#ccc;
+                    font-size:24px;
+                }
+            }
+        }
+        .me{
+            display:flex;
+            flex-wrap:wrap;
+            height:2.666667rem;
+            background:#fff;
+            margin-top:0.133333rem;
+            li{
+                width: 25%;
+                float:left;
+                border-right:1px solid #ccc;
+                border-bottom:1px solid #ccc;
+                text-align:center;
+                position:relative;
+                i{
+                    font-size:0.32rem;
+                    position:absolute;
+                    left:0.466667rem;top:0.346667rem;
+                }
+                span{
+                    font-size:0.16rem;
+                }
+            }
+        }
+        .btn{
+            margin-top:0.266667rem;
+            background:#FF6D55;
+            height: 0.666667rem;
+            font-size:0.213333rem;
+            text-align:center;
+            line-height: 0.666667rem;
+            display:none;
+        }
+    }
+}

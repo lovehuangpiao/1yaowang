@@ -1,5 +1,7 @@
 html,body{height: 100%;}
 .login{
+    display:flex;
+    flex-direction:column;
     height: 100%;
     .head{
         height: 0.613333rem;
@@ -35,7 +37,6 @@ html,body{height: 100%;}
                 position:absolute;
                 padding-left:0.133333rem;
                 font-size:0.186667rem;
-                color:#ccc;
             }
             .tu{
                 display:inline-block;

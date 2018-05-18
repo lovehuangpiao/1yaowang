@@ -53,7 +53,7 @@ class Login extends React.Component{
                     <i className="fa fa-angle-left left" aria-hidden="true" onClick={this.back.bind(this)}></i>
                     <span className="pu">普通登录</span>
                     <Link to="/reg">
-                        <span className="kuai">快速登录</span>
+                        <span className="kuai">快速注册</span>
                     </Link>
                 </div>
                 <div className="denglu">
@@ -62,12 +62,12 @@ class Login extends React.Component{
                             <input type="text" placeholder="手机号/邮箱/用户名" ref="phone"/>
                         </div>
                         <div  className="log">
-                            <input type="password" placeholder="登录密码" ref="password"/>
-                        </div>
-                        <div  className="log">
                             <input type="text" placeholder="图片验证码" ref="tu"/>
                             <i className="tu" id="container"></i>
                             <span className="huan" onClick={this.huan.bind(this)}>换一张</span>
+                        </div>
+                        <div  className="log">
+                            <input type="password" placeholder="登录密码" ref="password"/>
                         </div>
                     </div>
                     <div className="box">
