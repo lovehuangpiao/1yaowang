@@ -49,7 +49,7 @@ class Reg extends React.Component{
         http.post("reg",{phone,password}).then((res)=>{
             console.log(res)
             if(res.insertedCount == 1){
-                this.props.router.push({pathname: '/my', query: {username: phone}})
+                this.props.router.push({pathname: '/login', query: {username: phone}})
             }else{
                 alert("手机号已被注册，请换一个");
                 return false
@@ -61,7 +61,7 @@ class Reg extends React.Component{
             <div className="reg">
                 <div className="head">
                     <i className="fa fa-angle-left left" aria-hidden="true" onClick={this.back.bind(this)}></i>
-                    <span className="pu">快速登录</span>
+                    <span className="pu">快速注册</span>
                 </div>
                 <div className="denglu">
                     <div>
@@ -82,7 +82,7 @@ class Reg extends React.Component{
                         <span className="sp1">同意<i style={{color:"red"}}>《1药网用户协议》</i></span>
                         <span className="sp2">忘记密码？</span>
                     </div>
-                    <div className="btn" onClick={this.btn.bind(this)} ref="btn">登录</div>
+                    <div className="btn" onClick={this.btn.bind(this)} ref="btn">注册</div>
                 </div>
                 <div className="new">
                     新用户可通过快速登录注册账号

@@ -2,12 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc8be3ea-c6c8-4706-b777-00497a1c898b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/component/my/my.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/demo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/demo_fontclass.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/demo_symbol.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/demo_unicode.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/iconfont.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/iconfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/iconfont.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/iconfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/iconfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/houtai/iconfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/demo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/demo_fontclass.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/demo_symbol.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/demo_unicode.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/iconfont.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/iconfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/iconfont.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/iconfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/iconfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/xiangmu/css/huo/iconfont.woff" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.js" afterPath="$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.js" />
-      <change beforePath="$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.scss" afterPath="$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.scss" />
-      <change beforePath="$PROJECT_DIR$/src/xiangmu/components/content/content.js" afterPath="$PROJECT_DIR$/src/xiangmu/components/content/content.js" />
-      <change beforePath="$PROJECT_DIR$/src/xiangmu/container/filtercontent/filtercontent.js" afterPath="$PROJECT_DIR$/src/xiangmu/container/filtercontent/filtercontent.js" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/component/details/details.js" afterPath="$PROJECT_DIR$/src/xiangmu/component/details/details.js" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/component/login/login.js" afterPath="$PROJECT_DIR$/src/xiangmu/component/login/login.js" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/component/login/login.scss" afterPath="$PROJECT_DIR$/src/xiangmu/component/login/login.scss" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/component/my/my.js" afterPath="$PROJECT_DIR$/src/xiangmu/component/my/my.js" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/component/reg/reg.js" afterPath="$PROJECT_DIR$/src/xiangmu/component/reg/reg.js" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/css/base.css" afterPath="$PROJECT_DIR$/src/xiangmu/css/base.css" />
+      <change beforePath="$PROJECT_DIR$/src/xiangmu/pei-api/router/insertcardata.js" afterPath="$PROJECT_DIR$/src/xiangmu/pei-api/router/insertcardata.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,11 +59,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classlist.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="classlist.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -47,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/src/xiangmu/components/content/content.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-673">
-              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+              <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#70#107#0" expanded="true" />
@@ -88,6 +124,7 @@
         <option value="$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.js" />
         <option value="$PROJECT_DIR$/src/xiangmu/components/content/content.js" />
         <option value="$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.scss" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -200,12 +237,12 @@
       <workItem from="1526692688581" duration="21198000" />
       <workItem from="1526734523916" duration="3802000" />
       <workItem from="1526742252310" duration="1942000" />
-      <workItem from="1526833839990" duration="1638000" />
+      <workItem from="1526833839990" duration="1899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28580000" />
+    <option name="totallyTimeSpent" value="28841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -360,14 +397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -391,7 +420,7 @@
     <entry file="file://$PROJECT_DIR$/src/xiangmu/components/content/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-673">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#70#107#0" expanded="true" />
@@ -413,7 +442,15 @@
     <entry file="file://$PROJECT_DIR$/src/xiangmu/components/classlist/classlist.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding />
         </state>
       </provider>

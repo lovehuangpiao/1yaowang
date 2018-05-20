@@ -43,16 +43,30 @@ export default class DetailsComponent extends React.Component{
         })        
 
         $(".addCart").on("click",function(){
-            // let user = window.localStroage.getItem("user");
+            let user = window.localStorage.getItem('username');
+            console.log(user);
+            let id = goods.id;
+            let img = goods.img;
+            let name = goods.name;
+            let price = goods.price;
+            let qty = goods.qty;
+            let data = {
+                use:user,
+                id:id,
+                img:img,
+                name:name,
+                price:price,
+                qty:qty
+            }
             fetch('http://10.3.133.33:88/insertcardata',{
                 method:"POST",
-                body:JSON.stringify(goods),
+                body:JSON.stringify(data),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 }
             });
-            console.log(goods)
+            console.log(data)
         })
 
 
