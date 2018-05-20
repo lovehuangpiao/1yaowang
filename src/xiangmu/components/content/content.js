@@ -12,7 +12,9 @@ export default class Content extends Component{
   // static state = {
   //   isactive : false
   // }
-
+	state = {
+		isShow : false
+	}
   changeactive (id) {
     for (let item in this.refs){
       if(item == id){
@@ -22,6 +24,11 @@ export default class Content extends Component{
       }
     };
   }
+  changToFalse(){
+		this.setState({
+			isShow : false
+		})
+	}
   render(){
     return (<section className="content">
       <div className="left">
@@ -30,8 +37,13 @@ export default class Content extends Component{
             this.props.data.map((item)=>{
               return (<li  onClick={(e) => {
                 e.preventDefault();
-                this.changeactive(item.id)
-                this.props.getsubdata(item.id)
+                this.changeactive(item.id);
+                
+                this.props.getsubdata(item.id);
+								// this.setState({
+								// 	isShow : !this.state.isShow
+								// })
+              
               }} key={item.id} ><a  ref={item.id}  href="javascript ;">
               {item.name}</a>
               </li>)
@@ -45,6 +57,8 @@ export default class Content extends Component{
         </div>
         <div className="class_list">
           <Classlist />
+						{/*isShow={this.state.isShow}  */}
+					
         </div>
       </div>
     </section>)

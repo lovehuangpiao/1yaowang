@@ -6,7 +6,7 @@
 import { connect } from 'react-redux'
 import Content from '../../components/content/content'
 import * as actions from '../../action/'
-const makeStateToProps = (state) => {
+const makeStateToProps = (state,ownprops) => {
   let data = [];
   try {
     data = state.catetoryData.catetorydata.data || {}
