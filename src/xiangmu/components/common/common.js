@@ -18,7 +18,13 @@ export default class BodyComponent extends React.Component{
 
 jQuery(function($){
     $(".yibody").on("click","a",function(){
-        $(this).children("i").css({color:"red"})
+        $(this).children("i","span").css({color:"red"})
         console.log($(this).children("span"))
     })
+    // $(document).ready(function(){ 
+    //     $(".yibody").click("a",function(){
+    // console.log(5555);
+    //     $(this).addClass(".red").siblings().removeClass(".red");
+    //     });
+    // });
 })
