@@ -22,7 +22,10 @@ class CarComponent extends React.Component{
     }
 
     componentDidMount(){
-        ajax.get('/cardata').then((res)=>{})
+        let username = window.localStroage.getItem('')
+        ajax.get('/cardata',{username:}).then((res)=>{
+            console.log(res)
+        })
     }
     render(){
         return (
