@@ -9,11 +9,12 @@
     flex-wrap: wrap;
     // padding: 10px 10px;
     // justify-content: center;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between;
+    //align-content: center;
     li{
-      margin: 10px;
+      margin-top: 10px;
       border-radius: 50%;
+      width: 30%;
       a{
         display: flex;
         flex-direction: column;
@@ -30,4 +31,19 @@
       }
     }
   }
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
 }
