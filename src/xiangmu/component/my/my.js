@@ -7,21 +7,22 @@ import "./my.scss"
 
 class MyComponent extends React.Component{
     state = {
-        login:"登录",
-        reg:"注册",
+        login:""
     }
     componentDidMount(){
         $('.my').addClass('red').siblings('a').removeClass('red');
         let username = window.localStorage.getItem('username');
         console.log(username)
         this.setState({
-            login:username,
-            reg:""
+            login:username
         })
-        if(!username){
-            this.props.router.push({pathname: '/login'});
+        if(username){
+            this.refs.login.style.display = "none";
+            this.refs.reg.style.display = "none";
+            this.refs.btn.style.display = "block";
         }else{
-            $(".btn").css({display:"block"})
+            this.refs.lo.style.display = "block";
+            this.refs.btn.style.display = "none";
         }
     }
     btn(){
@@ -36,7 +37,8 @@ class MyComponent extends React.Component{
                     </div>
                     <div className="tou">
                         <i className="fa fa-drupal" aria-hidden="true"></i>
-                        <Link to="/login"><span className="sp1" ref="login">{this.state.login}</span></Link><Link to="/reg"><span className="sp2" ref="reg">{this.state.reg}</span></Link>
+                        <span ref="lo" className="lo">{this.state.login}</span>
+                        <Link to="/login"><span className="sp1" ref="login">登录 /</span></Link><Link to="/reg"><span className="sp2" ref="reg">注册</span></Link>
                     </div>
                     <div className="hui">
                         <i className="fa fa-vimeo-square" aria-hidden="true"></i><span>1+会员<br/>每月专属优惠</span>
@@ -69,7 +71,7 @@ class MyComponent extends React.Component{
                         <li><i className="iconfont icon-erji"></i><span>售后服务</span></li>
                         <li style={{borderRight:"none"}}><i className="iconfont icon-shezhi"></i><span>设置</span></li>
                     </ul>
-                    <Link to="/login"><div className="btn" onClick={this.btn.bind(this)}>退出当前账户</div></Link>
+                    <Link to="/login"><div className="btn" onClick={this.btn.bind(this)} ref="btn">退出当前账户</div></Link>
                 </div>
                 <BodyComponent />
             </div>

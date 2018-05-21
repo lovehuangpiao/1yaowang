@@ -1,5 +1,7 @@
 html,body{height: 100%;}
 .my{
+    display:flex;
+    flex-direction:column;
     height: 100%;
     .myhead{
         height: 1.8rem;
@@ -33,6 +35,10 @@ html,body{height: 100%;}
             span{
                 font-size:0.186667rem;
                 color:#fff;
+            }
+            .lo{
+                position:absolute;
+                left:1.2rem;top:0.506667rem;
             }
             .sp1{
                 position:absolute;
@@ -156,7 +162,6 @@ html,body{height: 100%;}
             font-size:0.213333rem;
             text-align:center;
             line-height: 0.666667rem;
-            display:none;
         }
     }
 }

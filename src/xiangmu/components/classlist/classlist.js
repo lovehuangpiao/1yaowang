@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import './classlist.scss'
 import { connect } from 'react-redux';
-import {Transition,TransitionGroup,CSSTransition}from 'react-transition-group';
+import {Link} from "react-router"
+import {Transition,TransitionGroup,CSSTransition} from 'react-transition-group';
 
 class ClassList extends Component{
  
@@ -33,9 +34,9 @@ class ClassList extends Component{
           this.props.data.thridCategory.map((item,idx)=>{
             return (<CSSTransition key={item.id} timeout={500} classNames="fade" >
 							<li ref={item.id} >
-								<a href="http://">
+								<Link to="/list">
 									<img src={item.icon} /><span>{item.name}</span>
-								</a>
+								</Link>
 							</li>
 						</CSSTransition>)})
         }
