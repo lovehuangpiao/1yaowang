@@ -86,8 +86,8 @@ class CarComponent extends React.Component{
     }
     componentDidMount(){
         let username = window.localStorage.getItem('username');
-            console.log(username);
-        ajax.get("cardata",{use:username}).then((res)=>{
+            // console.log(username);
+        ajax.get("cardata/"+username).then((res)=>{
             console.log(res);
     })
         jQuery(function($){
