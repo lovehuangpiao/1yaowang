@@ -1,0 +1,39 @@
+.gengduo{
+    margin-top:30px;
+    .sanjiaoxing{
+        width:0px;
+        height:0px;
+        border:20px solid #fff;
+        border-bottom-color:#ccc;
+        float:right;
+        position: fixed;
+        left:345px;
+        top:35px;
+    }
+    .gengduo_1{
+        border:0.013333rem solid #ccc;
+        font-size:0.266667rem;
+        width: 1.733333rem;
+        height: 1.733333rem;
+        color:#000;
+        float:right;
+        margin-right:10px;
+        margin-top:-5px;
+        background:#fff;
+        position: fixed;
+        left:250px;
+        top:80px;
+        li{
+            border-bottom:0.013333rem solid #ccc;
+            height: 0.6rem;
+            line-height:0.6rem;
+            padding-left:0.2rem;
+            i{
+                padding-right:0.133333rem;
+            }
+        }
+        .san{
+            border-bottom:0.0rem;
+        }
+    }
+}

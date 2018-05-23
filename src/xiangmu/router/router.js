@@ -9,11 +9,17 @@ import LoginComponent from "../component/login/login.js"
 import RegComponent from "../component/reg/reg.js"
 import ListComponent from "../component/list/list.js"
 import DetailsComponent from "../component/details/details.js"
+import BianJiComponent from "../component/bianji/bianji.js"
+import SlideComponent from "../component/slide/slide.js"
+import XuqiuComponent from "../component/xuqiu/xuqiu.js"
+import SettleComponent from "../component/settle/settle.js"
+import NullComponent from "../component/null/null.js"
+import GengduoComponent from "../component/gengduo/gengduo.js"
 
 import store from '../store'
 import {Provider} from 'react-redux'
-export default class RouterComponent extends React.Component{
 
+export default class RouterComponent extends React.Component{
     render(){
         return (
             <Provider store={store}>
@@ -29,6 +35,12 @@ export default class RouterComponent extends React.Component{
                 <Route path="/list" component={ListComponent} />
                 <Route path="/details" component={DetailsComponent} />
                 <Route path="/details(/:id)" component={DetailsComponent} />
+                <Route path="/bianji" component={BianJiComponent} />
+                <Route path="/slide" component={SlideComponent} />
+                <Route path="/xuqiu" component={XuqiuComponent} />
+                <Route path="/settle" component={SettleComponent} />
+                <Route path="/null" component={NullComponent} />
+                <Route path="/gengduo" component={GengduoComponent} />
             </Router>
             </Provider>
         )
