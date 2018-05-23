@@ -28,10 +28,10 @@ class ClassList extends Component{
   render(){
     return (<div className="list_size">
       <h5>{this.props.data.name}</h5>
-				<TransitionGroup component="ul" className="list_items">
+      <TransitionGroup component="ul" className="list_items">
         {
           this.props.data.thridCategory.map((item,idx)=>{
-            return (<CSSTransition key={item.id} timeout={500} classNames="fade" >
+            return (<CSSTransition  key={item.id} timeout={500} classNames="fade" >
 							<li ref={item.id} >
 								<a href="http://">
 									<img src={item.icon} /><span>{item.name}</span>
