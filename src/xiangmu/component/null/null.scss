@@ -1,0 +1,82 @@
+body,html{width: 100%;}
+.null{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    .header{
+        position:fixed;
+        display:flex;
+        justify-content:space-between;
+        width: 100%;
+        z-index::100;
+        .header_l{
+            display:flex;
+            justify-content:space-between;
+            width: 100%;
+            height: 0.64rem;
+            width: 100%;
+            background:#ccc;
+            i{
+                position: absolute;
+                top: 0;
+                left: 0.21333333333333335rem;
+                padding-left: -0.133333rem;
+                height: 100%;
+                color: #999;
+                font-size:0.266667rem;
+                line-height:0.64rem;
+            }
+            span{
+                font-size: 0.4rem;
+                display: block;
+                text-align: center;
+                font-size:0.266667rem;
+                line-height:0.64rem;
+            }
+            p{
+                font-size: 0.4rem;
+                display: block;
+                text-align: center;
+                font-size:0.266667rem;
+                line-height:0.64rem;
+                margin-right:0.133333rem;
+            }
+        }
+    }
+    .consig-main{
+        margin: 0.0rem 0.266667rem;
+        margin-top:0.626667rem;
+        div{
+            position: relative;
+            border-bottom: 0.013333rem solid #ccc;
+            line-height: 0.533333rem;
+             label{
+                font-size: 0.213333rem;
+                color:#535353;
+                margin-right: 0.106667rem;
+            }
+            input{
+                border: 0.0rem;
+                outline:none;
+                cursor: pointer; 
+                margin-top:0.4rem;
+            }
+            .consig-tacitlyApprove{
+                font-size: 0.213333rem;
+                color:#535353;
+                margin-left:0.4rem;
+            }
+            .consig-morenMap{
+                width: 0.186667rem;
+                height: 0.186667rem;
+                border-radius: 0.066667rem;
+                float:left;position: absolute;
+                left:0.0rem;
+                top:-0.2rem;
+            }
+        }
+       
+    }
+
+}
+    

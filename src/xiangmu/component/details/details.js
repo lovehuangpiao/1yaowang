@@ -71,7 +71,9 @@ export default class DetailsComponent extends React.Component{
             let price = goods.price;
             let qty = goods.qty;
             let data = {
+
                 username:username,
+                username:user,
                 id:id,
                 img:img,
                 name:name,

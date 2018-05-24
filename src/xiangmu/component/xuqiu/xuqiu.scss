@@ -1,0 +1,50 @@
+body,html{
+    width: 100%;
+}
+.xuqiu{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    .header{
+        position:fixed;
+        display:flex;
+        justify-content:space-between;
+        height: 0.626667rem;
+        width: 100%;
+        background:#fff;
+        z-index:1000;
+        .header_l{
+            display:flex;
+            float:left;
+            width: 0.706667rem;
+            height: 0.626667rem;
+            i{
+                display:block;
+                font-size:0.266667rem;
+                color: #666;
+                line-height:0.626667rem;
+                text-align:center;
+                padding-left:0.133333rem;
+            }
+
+        }
+        .header_z{
+            font-size:0.24rem;
+            line-height:0.626667rem;
+            text-align:center;
+            span{padding-right:0.266667rem;}
+        }
+        .header_r{
+            font-size:0.213333rem;
+             line-height:0.626667rem;
+            text-align:center;
+            span{
+                padding-right:0.133333rem;
+            }
+        }
+    }
+
+
+}
+    
+    

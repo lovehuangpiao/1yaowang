@@ -40,6 +40,7 @@
   "author": "DK.Lan",
   "license": "ISC",
   "dependencies": {
+    "ajax": "0.0.4",
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "element-react": "^1.1.4",
