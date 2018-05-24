@@ -5,7 +5,6 @@ module.exports={
     reg(app){
         app.get('/cardata/:username',async function(req,res){
             let username = String(parseInt(req.params.username));
-            console.log(username)
             let data = await db.select('cardata',{username:username});
             res.send(apiReulst(data.length>1,data));
         });
