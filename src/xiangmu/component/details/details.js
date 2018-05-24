@@ -10,10 +10,30 @@ import http from "../../pei-api/utils/httpclient.js"
 export default class DetailsComponent extends React.Component{
 
     componentDidMount(){
+        let username = window.localStorage.getItem('username');
+        let Arr;
+        let qty = 0;
+
+        http.get("cardata/"+username).then((res) =>{
+            console.log(res.data.data)
+            Arr = res.data.data;
+            console.log(Arr)
+            Arr.map(function(item){
+                qty += item.qty
+                console.log(qty)
+                return qty;
+            })
+            $(".goodsNum").text(qty);
+
+        })
+
+
+
         let id = this.props.params.id;
         console.log(id)
         let goods;
         http.post("list",{list_id:id}).then((res) =>{
+            console.log(res)
             goods = res.status.data[0];
             
             console.log(typeof(goods._id));
@@ -22,7 +42,7 @@ export default class DetailsComponent extends React.Component{
             })
         })
         new Swiper ('.swiper-container', {
-            direction: 'vertical',
+            centeredSlides: true,
             loop: true,
               
             // 如果需要分页器
@@ -43,15 +63,15 @@ export default class DetailsComponent extends React.Component{
         })        
 
         $(".addCart").on("click",function(){
-            let user = window.localStorage.getItem('username');
-            console.log(user);
+            
+            // console.log(user);
             let id = goods.id;
             let img = goods.img;
             let name = goods.name;
             let price = goods.price;
             let qty = goods.qty;
             let data = {
-                use:user,
+                username:username,
                 id:id,
                 img:img,
                 name:name,
@@ -66,10 +86,41 @@ export default class DetailsComponent extends React.Component{
                     'Content-Type': 'application/json',
                 }
             });
-            console.log(data)
+            // console.log(data)
+
+            var cart = $('.shopping-cart');
+            var imgtodrag = $("#Img");
+            console.log(imgtodrag)
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone().offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left
+                })
+                    .css({
+                    'opacity': '0.5',
+                        'position': 'absolute',
+                        'height': '180px',
+                        'width': '225px',
+                        'z-index': '100'
+                })
+                    .appendTo($('body'))
+                    .animate({
+                        'top': cart.offset().top - 25,
+                        'left': cart.offset().left + 20,
+                        'width': 60,
+                        'height': 75
+                }, 1000, 'easeInOutExpo');
+                
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach();
+                    let num = $(".goodsNum").text()*1 + 1;
+                    $(".goodsNum").text(num);
+                });
+            }
         })
-
-
     }
 
     state = {
@@ -91,11 +142,10 @@ export default class DetailsComponent extends React.Component{
                     {
                         this.state.details.map(function(item){
                             return(
-                                <div key={item.id}>
+                                <div key={item.id} id={item.id}>
                                     <div className="swiper-container">
                                         <div className="swiper-wrapper">
                                             <div className="swiper-slide"><img src={item.img} id="Img" /></div>
-                                            <div className="swiper-slide"><img src={item.img} /></div>
                                             <div className="swiper-slide"><img src="https://p4.maiyaole.com/img/item/201804/11/200_20180411182334525.jpg" /></div>
                                         </div>
                                         <div className="swiper-pagination"></div>
@@ -134,7 +184,7 @@ export default class DetailsComponent extends React.Component{
                     <ul className="details-bottom">
                         <li><i className="fa fa-heart-o" aria-hidden="true"></i><span>客服</span></li>
                         <li><i className="fa fa-star-o" aria-hidden="true"></i><span>收藏</span></li>
-                        <li><i className="fa fa-shopping-cart" aria-hidden="true"></i><span>购物车</span><span className="goodsNum">0</span></li>
+                        <li><i className="fa fa-shopping-cart" aria-hidden="true"></i><span className="shopping-cart" >购物车</span><span className="goodsNum">0</span></li>
                         <li className="addCart">加入购物车</li>
                     </ul>
                 </footer>
