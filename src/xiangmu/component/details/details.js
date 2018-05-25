@@ -9,6 +9,9 @@ import http from "../../pei-api/utils/httpclient.js"
 
 
 export default class DetailsComponent extends React.Component{
+    back(){
+        window.history.back();
+    }
     btn(){
         let username = window.localStorage.getItem('username');
         
@@ -149,7 +152,7 @@ export default class DetailsComponent extends React.Component{
         return(
             <div id="details">
                 <ul className="details-top">
-                    <li><i className="fa fa-chevron-left" aria-hidden="true"></i></li>
+                    <li><i className="fa fa-chevron-left" aria-hidden="true" onClick={this.back.bind(this)}></i></li>
                     <li className="details-top-center">
                         <span className="active">商品</span>
                         <span>详情</span>

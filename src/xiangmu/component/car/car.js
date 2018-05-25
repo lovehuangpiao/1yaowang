@@ -9,6 +9,9 @@ import SlideComponent from '../slide/slide.js'
 
 var check = true;
 class CarComponent extends React.Component{
+    back(){
+        window.history.back();
+    }
     submit(e){
             if(check==true){
             document.querySelector('.gengduo').style.display = 'block';
@@ -25,7 +28,7 @@ class CarComponent extends React.Component{
             <div className="car">
                 <ul className="header">
                     <li className="header_l">
-                        <Link to="/"><i className="fa fa-chevron-left" aria-hidden="true"></i></Link>
+                        <i className="fa fa-chevron-left" aria-hidden="true" onClick={this.back.bind(this)}></i>
                     </li>
                     <li className="header_z">
                         
