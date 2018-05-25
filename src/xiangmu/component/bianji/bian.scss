@@ -77,73 +77,40 @@ body,html{width: 100%;}
         .mian2_1{
             display:flex;
             justify-content:space-between;
-            .inp{
-                float:left;
-                align-self:center;
-                margin-left:0.066667rem;
-                margin-right:0.226667rem;
-            }
-            h1{
-                width: 1.266667rem;
-                height: 1.266667rem;
-                float:left;
-            }
-            .mian2_1_r{
+            .nav{
+                display:flex;
+                flex-flow:column wrap;
                 width:100%;
-                height: 1.266667rem;
                 float:right;
-                position: relative;
-                margin-top:0.133333rem;
-                margin-bottom:0.133333rem;
-                h3{
-                    font-size:0.213333rem;
-                    margin-left:0.133333rem;
-                }
-                p{
-                    font-size:0.24rem;
-                    color:red;
-                    position: absolute;
-                    left:0.0rem;
-                    top:0.533333rem;
-                    margin-left:0.133333rem;
-                }
-                h4{
-                    float:right;
-                    font-size:0.266667rem;
-                    text-align:center;
-                    display:block;
-                    width: 1.2rem;
-                    height: 0.266667rem;
-                    border:0.013333rem solid #ccc;
+                li{
                     position: relative;
-                    position: absolute;
-                    left:2.333333rem;
-                    top:0.533333rem;
-                    .jian{
+                    width: 100%;
+                    .inp{
+                        margin-top:0.533333rem;
                         float:left;
-                        font-size:0.333333rem;
-                        color:#000;
-                        position: absolute;
-                        left:-0.066667rem;
-                        top:-0.133333rem;
+                        margin-left:0.133333rem;
+                        
                     }
-                    span{
-                        width: 0.533333rem;
-                        height: 0.266667rem;
-                        float:left;
-                        font-size:0.186667rem;
-                        margin-left:0.306667rem;
-                        border-left:0.013333rem solid #ccc;
-                        border-right:0.013333rem solid #ccc;
-                    }
-                    .jia{
-                        float:right;
-                        line-height:0.266667rem;
-                        font-size:0.333333rem;
-                        color:#000;
-                        position: absolute;
-                        left:0.733333rem;
-                        top:-0.026667rem;
+                    .nav_x{
+                        width: 100%;
+                        img{
+                            width: 1.266667rem;
+                            height: 1.266667rem;
+                            background:red;
+                            margin-right:0.066667rem;
+                            float:left;
+                        }
+                        h5{
+                            float:left;
+                            font-size:0.213333rem;
+                            margin-left:10px;
+                            color:#000;
+                        }
+                        .price{
+                            font-size:0.24rem;
+                            color:red;
+                            margin-left:10px;
+                        }
                     }
                 }
             }
@@ -214,6 +181,7 @@ body,html{width: 100%;}
                 line-height:0.8rem;
                 text-align:center;
                 background:red;
+                width: 1.333333rem;
             }
     }
 
