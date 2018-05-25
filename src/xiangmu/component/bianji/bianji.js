@@ -4,6 +4,7 @@ import {Link} from "react-router"
 
 import GengduoComponent from '../gengduo/gengduo.js'
 import SlideComponent from '../slide/slide.js'
+import ajax from "../../pei-api/utils/httpclient.js"
 
 
 var check = true;
@@ -19,12 +20,26 @@ class BianJiComponent extends React.Component{
              document.querySelector('.contains').style.background = '#fff';
         }
     }
+    state = {
+        list : []
+    }
+    componentDidMount(){
+        let username = window.localStorage.getItem('username');
+        let list = [];
+        ajax.get("cardata/"+username).then((res)=>{
+           list = res.data.data || [];
+           // console.log(list);
+            this.setState({
+                list: res.data.data
+            })
+        })
+    }
     render(){
         return (
             <div className="bianji">
                 <ul className="header">
                     <li className="header_l">
-                        <Link to="/"><i className="fa fa-paper-plane-o" aria-hidden="true"></i></Link>
+                        <Link to="/"><i className="fa fa-chevron-left" aria-hidden="true"></i></Link>
                     </li>
                     <li className="header_z">
                         
@@ -52,26 +67,20 @@ class BianJiComponent extends React.Component{
                         <tbody>
                             <tr className="mian2">
                                 <td className="mian2_1">
-                                    <input type="checkbox" name="check selected" className="inp"/>
-                                    <h1>
-                                        <img src={require('../../img/car2.png')} />
-                                    </h1>
-                                    <div className="mian2_1_r">
-                                        <h3>世界大会上的</h3>
-                                        <p>￥30.00</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr className="mian2">
-                                <td className="mian2_1">
-                                    <input type="checkbox" name="check selected" className="inp"/>
-                                    <h1>
-                                        <img src={require('../../img/car3.png')} />
-                                    </h1>
-                                    <div className="mian2_1_r">
-                                        <h3>世界大会上的</h3>
-                                        <p>￥30.00</p>
-                                    </div>
+                                    <ul className="nav">
+                                        {
+                                            this.state.list.map(function(item){
+                                                return <li>
+                                                    <input type="checkbox" name="check selected" className="inp"/>
+                                                    <div className="nav_x">
+                                                        <img src={item.img} />
+                                                        <h5>{item.name}</h5>
+                                                        <span className="price">{item.price}</span>
+                                                    </div>
+                                                </li>
+                                            })
+                                        }
+                                    </ul>
                                 </td>
                             </tr>
                         </tbody>
@@ -83,7 +92,7 @@ class BianJiComponent extends React.Component{
                         
                     </div>
                     <h4 className="shanchu">
-                        删除（0）
+                        删除
                     </h4>
                 </div>
             </div>
@@ -95,7 +104,7 @@ class BianJiComponent extends React.Component{
             jQuery(function($){
 
                 let $btnAll = $('.all');
-                let $btnFx = $('.btnFx');
+                let $btnFx = $('.inp');
                 let $shanchu = $('.shanchu');
                 let $mian2 = $('.mian2');
                 let $table = $('.datalist');
@@ -140,9 +149,6 @@ class BianJiComponent extends React.Component{
                             // alert($('mian2').attr('.selected'));
                     });
                 });
-                // $shanchu.click(function(){
-                //     alert($('.selected').attr('你是否要删除？'))
-                // })
 
         })
 

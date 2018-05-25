@@ -42,8 +42,7 @@ class OrderComponent extends React.Component{
             <div className="settle">
                 <ul className="header">
                     <li className="header_l">
-                        <i className="fa fa-paper-plane-o" aria-hidden="true" onClick={this.focus}></i>
-
+                        <i className="fa fa-chevron-left" aria-hidden="true" onClick={this.focus}></i>
                         <span>确认订单</span>
                         <p></p>
                     </li>
@@ -59,15 +58,14 @@ class OrderComponent extends React.Component{
                 <div className="contains">
                     <ul>
                         <Link to="/null"><li className="dz">
-                            <Link to="/null"><i className="fa fa-paper-plane-o fa1" aria-hidden="true"></i></Link>
+                            <Link to="/null"><i className="fa fa-chevron-left fa1" aria-hidden="true"></i></Link>
                             <Link to="/null"><span>添加你的收获地址</span></Link>
-                            <Link to="/null"><i className="fa fa-paper-plane-o fa2" aria-hidden="true"></i></Link>
+                            <Link to="/null"><i className="fa fa-angle-right fa2" aria-hidden="true"></i></Link>
                         </li></Link>
                         <li className="ding_1">
                             <span className="ding_1_1">1药网</span>
                             <span value="sub" onClick={this.sub}>
-                                <i className="fa fa-paper-plane-o fa3" aria-hidden="true"> 
-                                </i>
+                                <i className="fa fa-angle-right fa3" aria-hidden="true"></i>
                         </span>
                         </li>
                         <li className="ding_n">
@@ -79,15 +77,15 @@ class OrderComponent extends React.Component{
                         </li>
                         <li className="ding_zf">
                             <span className="ding_1_1">支付方式</span>
-                            <Link to="/"><i className="fa fa-paper-plane-o fa3" aria-hidden="true"></i></Link>
+                            <Link to="/"><i className="fa fa-angle-right fa3" aria-hidden="true"></i></Link>
                         </li>
                         <li className="ding_yh">
                             <span className="ding_1_1">优惠卷</span>
-                            <Link to="/"><i className="fa fa-paper-plane-o fa3" aria-hidden="true"></i></Link>
+                            <Link to="/"><i className="fa fa-angle-right fa3" aria-hidden="true"></i></Link>
                         </li>
                         <li className="ding_zh">
                             <span className="ding_1_1">账户余额</span>
-                            <Link to="/"><i className="fa fa-paper-plane-o fa3" aria-hidden="true"></i></Link>
+                            <Link to="/"><i className="fa fa-angle-right fa3" aria-hidden="true"></i></Link>
                         </li>
                         <li className="ding_xz">
                             <span className="ding_1_1">选择私密包装</span>
@@ -98,15 +96,15 @@ class OrderComponent extends React.Component{
                         </li>
                         <li className="ding_fp">
                             <span className="ding_1_1">发票信息</span>
-                            <Link to="/"><i className="fa fa-paper-plane-o fa3" aria-hidden="true"></i></Link>
+                            <Link to="/"><i className="fa fa-angle-right fa3" aria-hidden="true"></i></Link>
                         </li>
                         <li className="ding_sp">
                             <span className="ding_1_1">商品金额</span>
-                            <Link to="/"><i className="fa fa-paper-plane-o fa3" aria-hidden="true"></i></Link>
+                            <Link to="/"><i className="fa fa-angle-right fa3" aria-hidden="true"></i></Link>
                         </li>
                         <li className="ding_zy">
                             <span className="ding_1_1">总运费</span>
-                            <Link to="/"><i className="fa fa-paper-plane-o fa3" aria-hidden="true"></i></Link>
+                            <Link to="/"><i className="fa fa-angle-right fa3" aria-hidden="true"></i></Link>
                         </li>
                     </ul>
                 </div>
