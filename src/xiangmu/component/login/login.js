@@ -37,6 +37,7 @@ class Login extends React.Component{
             if(res.status){
                 window.localStorage.setItem('username',res.message[0].username);
                 this.props.router.push({pathname: '/my'});
+                console.log(this)
                 if(check){
                     console.log(666)
                     window.localStorage.setItem('token',res.data);

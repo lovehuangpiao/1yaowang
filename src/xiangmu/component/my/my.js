@@ -71,7 +71,7 @@ class MyComponent extends React.Component{
                         <li><i className="iconfont icon-erji"></i><span>售后服务</span></li>
                         <li style={{borderRight:"none"}}><i className="iconfont icon-shezhi"></i><span>设置</span></li>
                     </ul>
-                    <Link to="/login"><div className="btn" onClick={this.btn.bind(this)} ref="btn">退出当前账户</div></Link>
+                    <Link to="/"><div className="btn" onClick={this.btn.bind(this)} ref="btn">退出当前账户</div></Link>
                 </div>
                 <BodyComponent />
             </div>

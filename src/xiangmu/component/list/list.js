@@ -76,6 +76,7 @@ export default class ListComponent extends React.Component{
             }
 
             let id = li.attr("id");
+            console.log(id)
             console.log(li.find('#name').text());
             let img = li.find('#Img').attr("src");
             let name = li.find('#name').text();
@@ -83,7 +84,7 @@ export default class ListComponent extends React.Component{
             let qty = 1;
             let data = {
                 username:username,
-                id:id,
+                id:Number(id),
                 img:img,
                 name:name,
                 price:price,

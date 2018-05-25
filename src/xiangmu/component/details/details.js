@@ -2,12 +2,58 @@
 import "./details.scss";
 
 import React from "react";
+import {Link} from "react-router";
 
 import Swiper from "swiper";
 import http from "../../pei-api/utils/httpclient.js"
 
 
 export default class DetailsComponent extends React.Component{
+    btn(){
+        let username = window.localStorage.getItem('username');
+        
+        var cart = $('.shopping-cart');
+        var imgtodrag = $("#Img");
+        if(!username){
+            this.props.router.push({pathname: '/login'});
+            return
+        }else{
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone().offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left
+                })
+                    .css({
+                    'opacity': '0.5',
+                        'position': 'absolute',
+                        'height': '180px',
+                        'width': '225px',
+                        'z-index': '100'
+                })
+                    .appendTo($('body'))
+                    .animate({
+                        'top': cart.offset().top - 25,
+                        'left': cart.offset().left + 20,
+                        'width': 60,
+                        'height': 75
+                }, 1000, 'easeInOutExpo');
+                
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, ()=> {
+                    $(this).detach();
+                    let num = $(".goodsNum").text()*1 + 1;
+                    $(".goodsNum").text(num);
+                    if(!username){
+                        this.props.router.push({pathname: '/login'});
+                    }else{
+                        this.props.router.push({pathname: '/car'});
+                    }   
+                });
+            }
+        }
+    }
 
     componentDidMount(){
         let username = window.localStorage.getItem('username');
@@ -62,7 +108,9 @@ export default class DetailsComponent extends React.Component{
             },*/      
         })        
 
-        $(".addCart").on("click",function(){
+        $(".addCart").on("click",()=>{
+            console.log(this)
+            
             
             // console.log(user);
             let id = goods.id;
@@ -73,7 +121,6 @@ export default class DetailsComponent extends React.Component{
             let data = {
 
                 username:username,
-                username:user,
                 id:id,
                 img:img,
                 name:name,
@@ -90,44 +137,14 @@ export default class DetailsComponent extends React.Component{
             });
             // console.log(data)
 
-            var cart = $('.shopping-cart');
-            var imgtodrag = $("#Img");
-            console.log(imgtodrag)
-            if (imgtodrag) {
-                var imgclone = imgtodrag.clone().offset({
-                    top: imgtodrag.offset().top,
-                    left: imgtodrag.offset().left
-                })
-                    .css({
-                    'opacity': '0.5',
-                        'position': 'absolute',
-                        'height': '180px',
-                        'width': '225px',
-                        'z-index': '100'
-                })
-                    .appendTo($('body'))
-                    .animate({
-                        'top': cart.offset().top - 25,
-                        'left': cart.offset().left + 20,
-                        'width': 60,
-                        'height': 75
-                }, 1000, 'easeInOutExpo');
-                
-                imgclone.animate({
-                    'width': 0,
-                    'height': 0
-                }, function () {
-                    $(this).detach();
-                    let num = $(".goodsNum").text()*1 + 1;
-                    $(".goodsNum").text(num);
-                });
-            }
+            
         })
     }
 
     state = {
         details:[]
     }
+
     render(){
         return(
             <div id="details">
@@ -187,7 +204,7 @@ export default class DetailsComponent extends React.Component{
                         <li><i className="fa fa-heart-o" aria-hidden="true"></i><span>客服</span></li>
                         <li><i className="fa fa-star-o" aria-hidden="true"></i><span>收藏</span></li>
                         <li><i className="fa fa-shopping-cart" aria-hidden="true"></i><span className="shopping-cart" >购物车</span><span className="goodsNum">0</span></li>
-                        <li className="addCart">加入购物车</li>
+                        <li className="addCart" onClick={this.btn.bind(this)}>加入购物车</li>
                     </ul>
                 </footer>
             </div>
