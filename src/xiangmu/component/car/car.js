@@ -13,20 +13,19 @@ class CarComponent extends React.Component{
             if(check==true){
             document.querySelector('.gengduo').style.display = 'block';
             check=false;
-            document.querySelector('.contains').style.background = '#ccc';
         }else if(check==false){
             document.querySelector('.gengduo').style.display = 'none';
             check=true;
-             document.querySelector('.contains').style.background = '#fff';
+             // document.querySelector('.contains').style.background = '#fff';
         }
     }
-
     render(){
+        // console.log(list)
         return (
             <div className="car">
                 <ul className="header">
                     <li className="header_l">
-                        <Link to="/"><i className="fa fa-paper-plane-o" aria-hidden="true"></i></Link>
+                        <Link to="/"><i className="fa fa-chevron-left" aria-hidden="true"></i></Link>
                     </li>
                     <li className="header_z">
                         
@@ -54,15 +53,25 @@ class CarComponent extends React.Component{
                         <tbody className="tab">
                             <tr className="mian2">
                                 <td className="mian2_1">
-                                    <input type="checkbox" name="check selected" className="inp"/>
-                                    <div className="goods-list">
-                                        
-                                    </div>
-                                    <h4 className="js">
-                                        <p className="jian">-</p>
-                                        <span className="qty">1</span>
-                                        <p className="jia">+</p>
-                                    </h4>
+                                    <ul className="nav">
+                                        {
+                                            this.state.list.map(function(item){
+                                                return <li>
+                                                    <input type="checkbox" name="check selected" className="inp"/>
+                                                    <div className="nav_x">
+                                                        <img src={item.img} />
+                                                        <h5>{item.name}</h5>
+                                                        <span className="price">{item.price}</span>
+                                                    </div>
+                                                    <h4 className="js">
+                                                        <p className="jian">-</p>
+                                                        <span className="qty">{item.qty}</span>
+                                                        <p className="jia">+</p>
+                                                    </h4>
+                                                </li>
+                                            })
+                                        }
+                                    </ul>
                                 </td>
                             </tr>
                         </tbody>
@@ -72,63 +81,33 @@ class CarComponent extends React.Component{
                 <div className="footer">
                     <div className="qx">
                         <input type="checkbox" name="check selected" className="inp"/>
-                        <h2>全选</h2>
+                        <h2>反选</h2>
                     </div>
                     <h3>
                         <p>合计：<span className="total">0.00</span></p>
                         <p className="yh">不含运费,已优惠￥0.00</p>
                     </h3>
-                    <Link to="/settle"><h4>去结算(<span className="shuliang">1</span>)</h4></Link>
+                    <Link to="/settle"><h4>去结算(<span className="shuliang"></span>)</h4></Link>
                 </div>
             </div>
 
         )
     }
+    state = {
+        list : []
+    }
     componentDidMount(){
         let username = window.localStorage.getItem('username');
-            // console.log(username);
+        let list = [];
         ajax.get("cardata/"+username).then((res)=>{
-            console.log(res);
-    })
+           list = res.data.data || [];
+           // console.log(list);
+            this.setState({
+                list: res.data.data
+            })
+        })
         jQuery(function($){
 
-            let list = [{
-                "imgurl":"../../img/car1.png",
-                "title":"Bottega  V0041 6811",
-                "price":5186,
-                "guid":"g001"
-            }]
-
-
-            let goodsList = document.getElementsByClassName('goods-list')[0];
-            let ul = document.createElement('ul');
-            let zong = 0;
-            list.forEach(function(item){
-                let li = document.createElement('li');
-                li.setAttribute('data-guid',item.guid);
-
-                let link = document.createElement('a');
-                link.href = 'details.html';
-
-                let img = document.createElement('img');
-                img.src = item.imgurl;
-
-                let h5 = document.createElement('h5');
-                h5.innerHTML = item.title;
-
-                let price =document.createElement('p');
-                price.className = 'price';
-                price.innerText = item.price;
-
-                li.appendChild(img);
-                li.appendChild(h5);
-                li.appendChild(price);
-
-                ul.appendChild(li);
-                zong += item.price;
-            });
-
-            goodsList.appendChild(ul);
 
             //全选、反洗
             let $btnAll = $('.all');
@@ -170,13 +149,22 @@ class CarComponent extends React.Component{
             }
 
             //加、减、总价
+            // console.log(res.data.data)
+                let zong = 0;
+                let $qty = $('.qty');
+                let $price = $('.price')
             $(function(){ 
                 $(".jia").click(function(){ 
+                    // console.log($(this).closest('li').find('.qty').text())
                     var t=$(this).parent().find('.qty'); 
-                    t.text(parseInt(t.text())+1) 
+                    t.text(parseInt(t.text())+1); 
                     setTotal(); 
                     // console.log($('.qty').text());
-                    $(".shuliang").html($('.qty').text()); 
+                    let _qty = $(this).closest('li').find('.qty').text()*1;
+                    let _qty1 = $(this).closest('li').siblings('li').find('.qty').text()*1;
+                    let a = _qty + _qty1;
+                    // console.log(_qty)
+                    $(".shuliang").html(a); 
                 }) 
                 $(".jian").click(function(){
                     var t=$(this).parent().find('.qty'); 
@@ -185,15 +173,18 @@ class CarComponent extends React.Component{
                         t.text(0); 
                     } 
                     setTotal(); 
-                    $(".shuliang").html($('.qty').text()); 
+                    let _qty = $('.qty').text()*1;
+                     $(".shuliang").html(_qty); 
+                    // console.log(_qty1)
                 }) 
-                console.log($('.qty').text())
+                
             function setTotal(){ 
                 var s=0; 
                 $(".tab td").each(function(){ 
-                    s+=parseInt($(this).find('.qty').text())*zong; 
+                    s+=parseInt($(this).find('.qty').text())*parseFloat($(this).find('.price').text()); 
+                    console.log(parseFloat($(this).find('.price').text()))
                 }); 
-                $(".total").html(s.toFixed(2)); 
+                $(".total").html(s.toFixed(1)); 
                 } 
                 setTotal(); 
 
@@ -202,11 +193,4 @@ class CarComponent extends React.Component{
     }
 }
             
-
-
-
-
-   
-
-
 export default CarComponent
